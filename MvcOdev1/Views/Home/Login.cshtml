@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Üye Girişi</h2>
+@using (Html.BeginForm())
+{
+    <div class="m-3 ">
+        <label for="txtKullanici" style="width: 100px">Kullanici Adi: </label>
+        @Html.TextBox("kullaniciAdi")
+    </div>
+    <div class="m-3 ">
+        <label for="txtKullanici" style="width: 100px">Şifre: </label>
+        @Html.Password("sifre")
+    </div>
+    <input type="submit" value="Giriş yap" />
+
+}
+
+
+
+

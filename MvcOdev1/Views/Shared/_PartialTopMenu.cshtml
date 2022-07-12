@@ -1,0 +1,54 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="~/Home">Mvc Odev 1</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="~/Home">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/About">Hakkımızda</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Ürünlerimiz
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Elektronik</a></li>
+                        <li><a class="dropdown-item" href="#">Bilgisayar</a></li>
+                        <li><a class="dropdown-item" href="#">Telefon</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="~/Home/Contact">İletişim</a>
+                </li>
+                @if (Session["kullanici"] == null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Login">Üye Girişi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/UyeOl">Kayıt ol</a>
+                    </li>
+                }
+                else
+                {
+                    
+                    <li class="nav-item text-primary ms-5">
+                        <a class="nav-link text-dark fw-bold" style="cursor:auto" href="#"> @("Hoşgeldiniz "+Session["kullanici"])</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary fw-bold" href="~/Home/SessionSil">Çıkış Yap</a>
+                    </li>
+
+                }
+
+            </ul>
+        </div>
+    </div>
+</nav>
